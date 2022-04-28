@@ -1,6 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import banner1 from '../../../images/Banner/banner1.jpg'
+import banner1 from '../../../images/Banner/banner1.png'
 import banner2 from '../../../images/Banner/banner2.jpg'
 import banner3 from '../../../images/Banner/banner3.jpg'
 const Slider = () => {
@@ -13,7 +13,7 @@ const Slider = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3 className="text-info">Laptop</h3>
+          <h3 className="text-info">Stock Factory</h3>
           
         </Carousel.Caption>
       </Carousel.Item>

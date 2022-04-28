@@ -1,13 +1,19 @@
 import React from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import logo from '../../../images/logo/logo.png'
 const Header = () => {
   return (
-    <Navbar sticky="top" collapseOnSelect expand="lg" bg="primary" variant="dark">
+    <Navbar
+      sticky="top"
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      variant="primary"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          React-Bootstrap
+          <img src={logo} height='30px' alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -15,8 +21,10 @@ const Header = () => {
             <Nav.Link as={Link} to="/home">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/product">Product</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+            <Nav.Link as={Link} to="/product">
+              Product
+            </Nav.Link>
+            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -26,11 +34,15 @@ const Header = () => {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
           <Nav>
-            <Nav.Link as={Link} to='/about'>About</Nav.Link>
-            <Nav.Link as={Link} to='/blog'>Blog</Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About
+            </Nav.Link>
+            <Nav.Link as={Link} to="/blog">
+              Blog
+            </Nav.Link>
             <Nav.Link eventKey={2} as={Link} to="/login">
               Login
             </Nav.Link>
