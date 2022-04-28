@@ -6,7 +6,8 @@ const Home = () => {
   return (
     <div>
       <Slider></Slider>
-      <h1 className="text-center text-info mt-3">Product option</h1>
+      <h1 className="text-center text-info mt-3">Inventory Items option</h1>
+      <hr />
 
       {/* <Factory></Factory> */}
     </div>
