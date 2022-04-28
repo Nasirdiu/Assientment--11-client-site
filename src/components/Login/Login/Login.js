@@ -1,13 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [sendPasswordResetEmail, sending, error2] =
+    useSendPasswordResetEmail(auth);
+    const [signInWithGoogle, user3, loading3, error3] = useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+  }, [user]);
+
+  let errorhandle;
+  if (error) {
+    errorhandle = <p className="text-danger">Error:{error?.message}</p>;
+  }
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -15,14 +35,24 @@ const Login = () => {
     setPassword(e.target.value);
   };
 
-  const handeleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    signInWithEmailAndPassword(email,password);
+    signInWithEmailAndPassword(email, password);
   };
+
+  const handleRestPassword = async () => {
+    if (email) {
+      await sendPasswordResetEmail(email);
+      toast("Send Your Email Cheek");
+    } else {
+      toast("Please Your Email ");
+    }
+  };
+
   return (
     <div className="container bg-info w-75 rounded mt-3">
       <h1 className="text-center text-primary">Login</h1>
-      <Form onSubmit={handeleSubmit} className="w-50 mx-auto">
+      <Form onSubmit={handleSubmit} className="w-50 mx-auto">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
@@ -45,16 +75,14 @@ const Login = () => {
         <p>
           Password Forget?
           <Link
-            //   onClick={resetPassword}
+            onClick={handleRestPassword}
             className="from-link text-decoration-none text-danger"
             to=""
           >
             Forget Password
           </Link>
         </p>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
+        <hr />
         <p>
           Sign Up For Your Account First?
           <Link
@@ -64,12 +92,26 @@ const Login = () => {
             Register Now..
           </Link>
         </p>
+        {errorhandle}
         <Button
           variant="primary"
           className="d-block mx-auto w-50"
           type="submit"
         >
           Login
+        </Button>
+        <div className="d-flex align-items-center">
+          <div style={{ height: "1px" }} className="bg-danger w-50"></div>
+          <p className="m-2 px-2">Or</p>
+          <div style={{ height: "1px" }} className="bg-danger w-50"></div>
+        </div>
+        <Button
+          variant="primary"
+          className="d-block mx-auto w-50"
+          type="submit"
+          onClick={()=>signInWithGoogle()}
+        >
+          Google Login
         </Button>
       </Form>
     </div>

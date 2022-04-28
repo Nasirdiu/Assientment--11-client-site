@@ -51,7 +51,7 @@ const Header = () => {
               Blog
             </Nav.Link>
             {
-              user? (<button className="btn btn-link text-light text-decoration-none"
+              user? (<button className="btn btn-link text-danger text-decoration-none"
               onClick={handleSingOut}>Sing Out</button>):
               <Nav.Link eventKey={2} as={Link} to="/login">
               Login
