@@ -1,9 +1,10 @@
 import React from "react";
+import { FaYoutube,FaFacebook,FaInstagram,FaLinkedinIn } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-white pt-5 pb-4">
+    <footer className="bg-dark text-white pt-5 pb-4 mt-4">
       <div className="container text-center text-md-left">
         <div className="row text-center text-md-left">
           <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -22,24 +23,24 @@ const Footer = () => {
               Products
             </h5>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -47,42 +48,44 @@ const Footer = () => {
               Usefull Link
             </h5>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
             <p>
-              <a href="#" className="text-white text-decoration-none">
+              <Link to='/' className="text-white text-decoration-none">
                 The Providers
-              </a>
+              </Link>
             </p>
           </div>
           <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
             <h5 className="text-uppercase mb-4 font-weight-bold text-warning">
               Social Media
             </h5>
-            <p>
-              <i className="fas fa-home mr-3"></i>New Yourk,Ny 3 ,us
-            </p>
+            <h3> <FaYoutube /> </h3>
+            <h3> <FaFacebook /> </h3>
+            <h3> <FaInstagram /> </h3>
+            <h3> <FaLinkedinIn /> </h3>
+       
           </div>
         </div>
         <div className="row align-item-center">
           <div className="col-md-7 col-lg-8">
             <p>
               Copyright 2022 All right reserved by:
-              <a href="#" className="text-warning text-decoration-none">
-                <strong> Providers</strong>
-              </a>
+              <Link to='/' className="text-warning text-decoration-none">
+                <strong> ELECTRONICS </strong>
+              </Link>
             </p>
           </div>
         </div>
