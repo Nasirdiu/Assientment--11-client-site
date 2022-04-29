@@ -16,7 +16,7 @@ const Header = () => {
       collapseOnSelect
       expand="lg"
       bg="light"
-      variant="primary"
+      
     >
       <Container>
         <Navbar.Brand as={CustomLink} to="/">
