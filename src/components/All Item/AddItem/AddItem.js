@@ -27,7 +27,7 @@ const AddItem = () => {
         "Content-type": "application/json; charset=UTF-8",
       },
     })
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         event.target.reset();
       });
