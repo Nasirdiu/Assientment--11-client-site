@@ -3,6 +3,7 @@ import Factory from "../Factory/Factory";
 import Slider from "../Slider/Slider";
 
 const Home = () => {
+  
   return (
     <div>
       <Slider></Slider>
