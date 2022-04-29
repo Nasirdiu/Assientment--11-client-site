@@ -36,7 +36,7 @@ const Slider = () => {
         />
 
         <Carousel.Caption>
-          <h3 className="text-info">Smart Tv</h3>
+          <h3 className="text-info">Water Prove Phone</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

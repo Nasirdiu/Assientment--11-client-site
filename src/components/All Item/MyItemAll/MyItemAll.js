@@ -7,7 +7,7 @@ const MyItemAll = () => {
   return (
     <div className="container mt-3">
       <h1 className="text-center text-info">My Item:{products.length}</h1>
-      <div className="item-product">
+      <div className="row">
         {products.map((product) => (
           <AllMyItemShow key={product._id} product={product}></AllMyItemShow>
         ))}

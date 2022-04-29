@@ -13,7 +13,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddItem from "./components/All Item/AddItem/AddItem";
 import MyItemAll from "./components/All Item/MyItemAll/MyItemAll";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <Header></Header>

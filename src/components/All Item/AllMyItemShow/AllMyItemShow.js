@@ -13,16 +13,25 @@ const AllMyItemShow = (props) => {
         method: "DELETE",
       })
         .then((res) => res.json())
-        .then((data) => { 
+        .then((data) => {
           setProducts(data);
         });
     }
   };
 
   return (
-    <div className="container m-3 p-2 bg-light">
-      <Card className="bg-info " style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={image} />
+    <div
+      data-aos="zoom-in-up"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+      className="g-5 col-sm-12 col-md-6 col-lg-4"
+    >
+      <Card className="bg-info cards " style={{ width: "18rem" }}>
+        <Card.Img
+          className="img-fluid w-75 d-block mx-auto"
+          variant="top"
+          src={image}
+        />
         <Card.Body>
           <Card.Title>Name:{name}</Card.Title>
           <Card.Text>Price:{price}</Card.Text>
