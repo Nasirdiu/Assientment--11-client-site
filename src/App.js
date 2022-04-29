@@ -12,6 +12,7 @@ import SingUp from "./components/Login/SingUp/SingUp";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddItem from "./components/All Item/AddItem/AddItem";
+import MyItemAll from "./components/All Item/MyItemAll/MyItemAll";
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
+        <Route path="/myadditem" element={<MyItemAll></MyItemAll>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
