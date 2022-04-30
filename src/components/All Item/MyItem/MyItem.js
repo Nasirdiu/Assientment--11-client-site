@@ -1,7 +1,9 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import "./MyItem.css";
 const MyItem = (props) => {
+  const navigate = useNavigate();
   // console.log(props.product);
   const { name, image, price, quantity, description, supplier } = props.product;
   return (
@@ -24,7 +26,12 @@ const MyItem = (props) => {
           <Card.Text>Description:{description.slice(0, 50)}</Card.Text>
           <Card.Title>Supplier:{supplier}</Card.Title>
           <Button className="d-block w-50 mx-auto" variant="primary">
-            Update
+            <Link
+              className="from-link text-decoration-none text-light"
+              to="/manageitem"
+            >
+              Update
+            </Link>
           </Button>
         </Card.Body>
       </Card>
