@@ -35,7 +35,7 @@ function App() {
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
         <Route path="/myadditem" element={<MyItemAll></MyItemAll>}></Route>
         <Route
-          path="/manageitem"
+          path="/manageitem/:id"
           element={
             <RequireAuth>
               <ManageItem></ManageItem>
