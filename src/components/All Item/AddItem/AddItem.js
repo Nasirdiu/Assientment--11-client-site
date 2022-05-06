@@ -12,7 +12,7 @@ const AddItem = () => {
     const supplier = event.target.supplier.value;
 
     // console.log(name, image, price, quantity, description, supplier);
-    const url = `http://localhost:5000/uploadPd`;
+    const url = `https://stark-earth-37268.herokuapp.com/uploadPd`;
     fetch(url, {
       method: "POST",
       body: JSON.stringify({

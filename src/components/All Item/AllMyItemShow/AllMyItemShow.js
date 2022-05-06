@@ -5,7 +5,7 @@ const AllMyItemShow = (props) => {
   const [products, setProducts] = useItem();
   const [reload, setReload] = useState(false);
   useEffect(() => {
-    fetch(`http://localhost:5000/product`)
+    fetch(`https://stark-earth-37268.herokuapp.com/product`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [reload]);
@@ -16,7 +16,7 @@ const AllMyItemShow = (props) => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure Delete?");
     if (proceed) {
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://stark-earth-37268.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

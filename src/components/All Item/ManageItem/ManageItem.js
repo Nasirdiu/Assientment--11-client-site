@@ -9,16 +9,15 @@ const ManageItem = () => {
   console.log(id);
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://stark-earth-37268.herokuapp.com/product/${id}`)
       .then((res) => res.json())
       .then((data) => setSingelProduct(data));
   }, [reload]);
-  
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     fetch(
-      `http://localhost:5000/product/${id}?oldQuantity=${singleProduct.quantity}`,
+      `https://stark-earth-37268.herokuapp.com/product/${id}?oldQuantity=${singleProduct.quantity}`,
       {
         method: "put",
         headers: {
@@ -29,10 +28,8 @@ const ManageItem = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         SetReload(!reload);
-        alert("added successfull, reload this page");
-        
+        alert("added success, reload this page");
       });
   };
 
@@ -40,7 +37,7 @@ const ManageItem = () => {
 
   const decriseOne = () => {
     fetch(
-      `http://localhost:5000/products/${id}?oldQuantity=${singleProduct.quantity}`,
+      `https://stark-earth-37268.herokuapp.com/products/${id}?oldQuantity=${singleProduct.quantity}`,
       {
         method: "put",
         headers: {
@@ -50,17 +47,14 @@ const ManageItem = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         SetReload(!reload);
-        alert("Delivery successfyll, reload this page");
+        alert("Delivery success");
       });
   };
 
   return (
     <div className="mt-5 container text-center">
-      <h2 className="text-info">
-        Welcome To Inventory Ff : {singleProduct.name}
-      </h2>
+      <h2 className="text-info">Welcome To Inventory : {singleProduct.name}</h2>
       <hr />
       <div className="row d-flex align-items-center">
         <div className="col-md-6">

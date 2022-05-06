@@ -40,6 +40,7 @@ const MyItem = (props) => {
           </Button>
         </Card.Body>
       </Card>
+     
     </div>
   );
 };
