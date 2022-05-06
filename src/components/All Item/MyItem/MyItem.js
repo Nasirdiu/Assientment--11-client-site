@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import ManageItem from "../ManageItem/ManageItem";
+import {  useNavigate } from "react-router-dom";
 import "./MyItem.css";
 const MyItem = (props) => {
   const navigate = useNavigate();

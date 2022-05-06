@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
-
+import { useNavigate, useParams } from "react-router-dom";
+import "./ManageItem.css";
 const ManageItem = () => {
   const { id } = useParams();
+  const [reload, SetReload] = useState(false);
+  const nagtive = useNavigate();
   console.log(id);
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
     fetch(`http://localhost:5000/product/${id}`)
       .then((res) => res.json())
       .then((data) => setSingelProduct(data));
-  }, []);
-  console.log(singleProduct);
+  }, [reload]);
+  
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -28,7 +30,9 @@ const ManageItem = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
-        alert("added successfyll, reload this page");
+        SetReload(!reload);
+        alert("added successfull, reload this page");
+        
       });
   };
 
@@ -47,13 +51,16 @@ const ManageItem = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        SetReload(!reload);
         alert("Delivery successfyll, reload this page");
       });
   };
 
   return (
     <div className="mt-5 container text-center">
-      <h2>Welcome to Infentory of : {singleProduct.name}</h2>
+      <h2 className="text-info">
+        Welcome To Inventory Ff : {singleProduct.name}
+      </h2>
       <hr />
       <div className="row d-flex align-items-center">
         <div className="col-md-6">
@@ -66,7 +73,7 @@ const ManageItem = () => {
           <h5>Discription: {singleProduct.discription}</h5>
           <h5>Seller: {singleProduct.seller}</h5>
           <h5>Quantity: {singleProduct.quantity}</h5>
-          <button onClick={decriseOne} className="deliver-btn">
+          <button onClick={decriseOne} className="deliver-btn btn btn-info">
             Deliverd
           </button>
         </div>
@@ -78,6 +85,12 @@ const ManageItem = () => {
           </form>
         </div>
       </div>
+      <button
+        className="btn btn-info deliver-btn w-25 h-25"
+        onClick={() => nagtive("/myadditem")}
+      >
+        Manage inventory
+      </button>
     </div>
   );
 };

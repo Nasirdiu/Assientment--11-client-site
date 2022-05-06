@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import useItem from "../../../hook/useItem";
 const AllMyItemShow = (props) => {
   const [products, setProducts] = useItem();
+  const [reload, setReload] = useState(false);
   useEffect(() => {
     fetch(`http://localhost:5000/product`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, []);
- 
+  }, [reload]);
+
   const { _id, name, image, price, quantity, description, supplier } =
     props.product;
   //delete option
@@ -16,13 +17,13 @@ const AllMyItemShow = (props) => {
     const proceed = window.confirm("Are You Sure Delete?");
     if (proceed) {
       const url = `http://localhost:5000/product/${id}`;
-      console.log(url);
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           setProducts(data);
+          setReload(!reload);
         });
     }
     window.location.reload();

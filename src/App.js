@@ -18,6 +18,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ManageItem from "./components/All Item/ManageItem/ManageItem";
 import RequireAuth from "./components/Login/RequireAuth/RequireAuth";
+import MyAddItem from "./components/All Item/MyAddItem/MyAddItem";
 function App() {
   useEffect(() => {
     AOS.init();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blog" element={<Blog></Blog>}></Route>
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
+        <Route path="/myitem" element={<MyAddItem></MyAddItem>}></Route>
         <Route path="/myadditem" element={<MyItemAll></MyItemAll>}></Route>
         <Route
           path="/manageitem/:id"

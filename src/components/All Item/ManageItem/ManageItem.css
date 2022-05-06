@@ -1,0 +1,9 @@
+.deliver-btn {
+    border: none;
+    padding: 0px 20px;
+    border-radius: 10px;
+  }
+  .deliver-btn:hover {
+    background-color: orange;
+    transition: 0.6s;
+  }
