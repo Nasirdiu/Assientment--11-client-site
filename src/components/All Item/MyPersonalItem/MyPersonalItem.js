@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const MyPersonalItem = (props) => {
-  const { _id, name, image, price, quantity, description, supplier } =
+  const {name, image, price, quantity, description, supplier } =
     props.product;
 
   return (

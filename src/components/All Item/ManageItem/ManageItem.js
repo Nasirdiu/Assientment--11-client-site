@@ -6,7 +6,6 @@ const ManageItem = () => {
   const { id } = useParams();
   const [reload, SetReload] = useState(false);
   const nagtive = useNavigate();
-  console.log(id);
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
     fetch(`https://stark-earth-37268.herokuapp.com/product/${id}`)
