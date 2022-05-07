@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./ManageItem.css";
 const ManageItem = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const ManageItem = () => {
       .then((response) => response.json())
       .then((data) => {
         SetReload(!reload);
-        alert("added success, reload this page");
+        toast("added quantity success");
       });
   };
 
@@ -47,7 +48,7 @@ const ManageItem = () => {
       .then((response) => response.json())
       .then((data) => {
         SetReload(!reload);
-        alert("Delivery success");
+        toast("Delivery success");
       });
   };
 
