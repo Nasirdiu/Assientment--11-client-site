@@ -46,6 +46,7 @@ const AllMyItemShow = (props) => {
           <Card.Text>Quantity:{quantity}</Card.Text>
           <Card.Text>Description:{description.slice(0, 50)}</Card.Text>
           <Card.Title>Supplier:{supplier}</Card.Title>
+
           <Button
             onClick={() => handleDelete(_id)}
             className="d-block w-50 mx-auto"

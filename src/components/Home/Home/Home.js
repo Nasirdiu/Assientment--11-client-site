@@ -19,14 +19,6 @@ const Home = () => {
         {products.slice(0, 6).map((product) => (
           <MyItem key={product._id} product={product}></MyItem>
         ))}
-        <div>
-          <button
-            className="btn btn-info deliver-btn mt-5 mx-auto d-block w-25 h-50"
-            onClick={() => navigate("/myadditem")}
-          >
-            Total Item
-          </button>
-        </div>
       </div>
       <Mobile></Mobile>
       <Factory></Factory>

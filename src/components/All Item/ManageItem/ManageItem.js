@@ -84,6 +84,14 @@ const ManageItem = () => {
       >
         Manage inventory
       </button>
+      <div>
+      <button
+        className="btn btn-info deliver-btn mt-3"
+        onClick={() => nagtive("/additem")}
+      >
+        Add Item
+      </button>
+      </div>
     </div>
   );
 };
