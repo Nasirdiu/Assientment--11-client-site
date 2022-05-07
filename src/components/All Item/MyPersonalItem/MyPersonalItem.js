@@ -1,9 +1,26 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import useItem from "../../../hook/useItem";
 
 const MyPersonalItem = (props) => {
-  const {name, image, price, quantity, description, supplier } =
+  const [products, setProducts] = useItem();
+  const { _id, name, image, price, quantity, description, supplier } =
     props.product;
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure Delete?");
+    if (proceed) {
+      const url = `https://stark-earth-37268.herokuapp.com/product/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setProducts(data);
+        });
+    }
+    window.location.reload();
+  };
 
   return (
     <div
@@ -24,6 +41,13 @@ const MyPersonalItem = (props) => {
           <Card.Text>Quantity:{quantity}</Card.Text>
           <Card.Text>Description:{description.slice(0, 50)}</Card.Text>
           <Card.Title>Supplier:{supplier}</Card.Title>
+          <Button
+            onClick={() => handleDelete(_id)}
+            className="d-block w-50 h-50 mx-auto deliver-btn"
+            variant="primary"
+          >
+            Delete
+          </Button>
         </Card.Body>
       </Card>
     </div>

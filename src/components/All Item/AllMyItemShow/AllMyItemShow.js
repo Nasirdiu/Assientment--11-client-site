@@ -49,7 +49,7 @@ const AllMyItemShow = (props) => {
 
           <Button
             onClick={() => handleDelete(_id)}
-            className="d-block w-50 mx-auto"
+            className="d-block w-50 h-50 mx-auto deliver-btn"
             variant="primary"
           >
             Delete

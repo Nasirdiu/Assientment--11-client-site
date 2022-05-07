@@ -2,6 +2,12 @@
 
 Live sit Link :- [https://electronics-warehouse-56938.web.app/](https://electronics-warehouse-56938.web.app/).
 
+## Electronics Warehouse Review....
+
+<p>
+Evaluating the advantages of a warehouse management system is one of the many critical aspects of growing businesses. A warehouse management system will significantly help the growing companies possessing on-hand stocks and inventories.
+</p>
+
 ## Project Review....
 
 <ul>

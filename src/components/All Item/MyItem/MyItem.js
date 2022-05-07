@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import {  useNavigate } from "react-router-dom";
-import auth from "../../../firebase.init";
 import "./MyItem.css";
 const MyItem = (props) => {
   
