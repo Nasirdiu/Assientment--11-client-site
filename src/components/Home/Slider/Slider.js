@@ -5,10 +5,11 @@ import banner2 from '../../../images/Banner/banner2.jpg'
 import banner3 from '../../../images/Banner/banner3.jpg'
 const Slider = () => {
   return (
-    <Carousel fade>
+   
+      <Carousel fade>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={banner1}
           alt="First slide"
         />
@@ -19,7 +20,7 @@ const Slider = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={banner2}
           alt="Second slide"
         />
@@ -30,7 +31,7 @@ const Slider = () => {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block w-100 img-fluid"
           src={banner3}
           alt="Third slide"
         />
@@ -40,6 +41,7 @@ const Slider = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    
   );
 };
 

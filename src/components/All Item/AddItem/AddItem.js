@@ -1,7 +1,12 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import auth from "../../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -10,6 +15,7 @@ const AddItem = () => {
     const quantity = event.target.quantity.value;
     const description = event.target.description.value;
     const supplier = event.target.supplier.value;
+    const email = event.target.email.value;
 
     // console.log(name, image, price, quantity, description, supplier);
     const url = `https://stark-earth-37268.herokuapp.com/uploadPd`;
@@ -22,6 +28,7 @@ const AddItem = () => {
         quantity,
         description,
         supplier,
+        email,
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -59,6 +66,17 @@ const AddItem = () => {
             name="quantity"
             placeholder="quantity"
             required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="textarea">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            name="email"
+            value={user?.email}
+            placeholder="email"
+            required
+            readOnly
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="textarea">

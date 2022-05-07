@@ -10,7 +10,7 @@ const Home = () => {
   const [products] = useItem();
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="container-fluid">
       <Slider></Slider>
       <h1 className="text-center text-info mt-3">Inventory Items option</h1>
       <hr />

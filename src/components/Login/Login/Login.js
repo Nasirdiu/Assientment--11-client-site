@@ -15,10 +15,26 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending, error2] =
     useSendPasswordResetEmail(auth);
-    const [signInWithGoogle, user3, loading3, error3] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user3, loading3, error3] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (user) {
+      const url = "http://localhost:5000/product";
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+          email: user.email,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          // console.log(data);
+          localStorage.setItem("accessToken", data.token);
+        });
+
       navigate("/home");
     }
   }, [user]);
@@ -109,7 +125,7 @@ const Login = () => {
           variant="primary"
           className="d-block mx-auto w-50"
           type="submit"
-          onClick={()=>signInWithGoogle()}
+          onClick={() => signInWithGoogle()}
         >
           Google Login
         </Button>

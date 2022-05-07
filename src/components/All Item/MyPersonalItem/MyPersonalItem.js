@@ -1,19 +1,10 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import {  useNavigate } from "react-router-dom";
-import auth from "../../../firebase.init";
-import "./MyItem.css";
-const MyItem = (props) => {
-  
-  const navigate = useNavigate();
-  // console.log(props.product);
+
+const MyPersonalItem = (props) => {
   const { _id, name, image, price, quantity, description, supplier } =
     props.product;
-  const handleProduct = (id) => {
-    // console.log(id);
 
-    navigate(`/manageitem/${id}`);
-  };
   return (
     <div
       data-aos="zoom-in-up"
@@ -33,18 +24,10 @@ const MyItem = (props) => {
           <Card.Text>Quantity:{quantity}</Card.Text>
           <Card.Text>Description:{description.slice(0, 50)}</Card.Text>
           <Card.Title>Supplier:{supplier}</Card.Title>
-          <Button
-            onClick={() => handleProduct(_id)}
-            className="d-block w-50 mx-auto"
-            variant="primary"
-          >
-            Update
-          </Button>
         </Card.Body>
       </Card>
-     
     </div>
   );
 };
 
-export default MyItem;
+export default MyPersonalItem;

@@ -3,12 +3,11 @@ import { Button, Card } from "react-bootstrap";
 import useItem from "../../../hook/useItem";
 const AllMyItemShow = (props) => {
   const [products, setProducts] = useItem();
-  const [reload, setReload] = useState(false);
   useEffect(() => {
     fetch(`https://stark-earth-37268.herokuapp.com/product`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
-  }, [reload]);
+  }, []);
 
   const { _id, name, image, price, quantity, description, supplier } =
     props.product;
@@ -23,7 +22,6 @@ const AllMyItemShow = (props) => {
         .then((res) => res.json())
         .then((data) => {
           setProducts(data);
-          setReload(!reload);
         });
     }
     window.location.reload();

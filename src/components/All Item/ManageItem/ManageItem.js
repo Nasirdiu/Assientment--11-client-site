@@ -64,8 +64,8 @@ const ManageItem = () => {
             alt=""
           />
           <h5>Name: {singleProduct.name}</h5>
-          <h5>Discription: {singleProduct.discription}</h5>
-          <h5>Seller: {singleProduct.seller}</h5>
+          <h5>Description: {singleProduct.description}</h5>
+          <h5>Supplier: {singleProduct.supplier}</h5>
           <h5>Quantity: {singleProduct.quantity}</h5>
           <button onClick={decriseOne} className="deliver-btn btn btn-info">
             Deliverd
