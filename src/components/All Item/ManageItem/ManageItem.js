@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "./ManageItem.css";
 const ManageItem = () => {
   const { id } = useParams();
-  const [reload, SetReload] = useState(false);
+  const [reload, setReload] = useState(false);
   const nagtive = useNavigate();
   const [singleProduct, setSingelProduct] = useState({});
   useEffect(() => {
@@ -28,7 +28,7 @@ const ManageItem = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        SetReload(!reload);
+        setReload(!reload);
         toast("added quantity success");
       });
   };
@@ -47,7 +47,7 @@ const ManageItem = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        SetReload(!reload);
+        setReload(!reload);
         toast("Delivery success");
       });
   };
