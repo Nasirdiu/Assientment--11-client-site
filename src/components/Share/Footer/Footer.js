@@ -100,7 +100,7 @@ const Footer = () => {
             <p>
               Copyright 2022 All right reserved by:
               <Link to="/" className="text-warning text-decoration-none">
-                <strong> ELECTRONICS </strong>
+                <strong> ELECTRONICS HOUSE </strong>
               </Link>
             </p>
           </div>
