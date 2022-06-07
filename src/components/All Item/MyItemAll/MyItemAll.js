@@ -47,7 +47,7 @@ const MyItemAll = () => {
                 <Card.Title>Name:{p.name}</Card.Title>
                 <Card.Text>Price:{p.price}</Card.Text>
                 <Card.Text>Quantity:{p.quantity}</Card.Text>
-                <Card.Text>Description:{p.description.slice(0, 50)}</Card.Text>
+                <Card.Text>Description:{p.description?.slice(0, 50)}</Card.Text>
                 <Card.Title>Supplier:{p.supplier}</Card.Title>
                 <Button
                   onClick={() => handleDelete(p._id)}
